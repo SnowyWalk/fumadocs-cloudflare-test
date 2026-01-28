@@ -1,0 +1,11 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "test-docs2" # 프로젝트 이름
+main = ".open-next/worker.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# 정적 자산(이미지, CSS 등) 설정
+assets = { directory = ".open-next/assets", binding = "ASSETS" }
+
+[vars]
+# 필요한 경우 환경 변수 추가
