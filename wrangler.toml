@@ -9,3 +9,6 @@ assets = { directory = ".open-next/assets", binding = "ASSETS" }
 
 [vars]
 # 필요한 경우 환경 변수 추가
+
+[output]
+dir = ".open-next"
