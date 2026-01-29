@@ -1,6 +1,5 @@
 #:schema node_modules/wrangler/config-schema.json
 name = "test-docs2" # 프로젝트 이름
-main = ".open-next/worker.js"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
