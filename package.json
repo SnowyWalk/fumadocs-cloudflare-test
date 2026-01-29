@@ -8,7 +8,7 @@
     "start": "next start",
     "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
     "postinstall": "fumadocs-mdx",
-    "pages:build": "npx @opennextjs/cloudflare build && cp -r .open-next/cloudflare .open-next/middleware .open-next/.build .open-next/server-functions .open-next/assets/ && cp .open-next/worker.js .open-next/assets/_worker.js && mkdir -p .open-next/assets/_next && cp -r .next/static .open-next/assets/_next/ && echo '=== 파일 구조 확인 ===' && ls -R .open-next/assets/_next"
+    "pages:build": "npx @opennextjs/cloudflare build && cp -r .open-next/cloudflare .open-next/middleware .open-next/.build .open-next/server-functions .open-next/assets/ && cp .open-next/worker.js .open-next/assets/_worker.js && mkdir -p .open-next/assets/_next && cp -r .next/static .open-next/assets/_next/ && cp .open-next/_routes.json .open-next/assets/ 2>/dev/null || : && echo 'globalThis.__name = (target, value) => Object.defineProperty(target, \"name\", { value, configurable: true });' | cat - .open-next/assets/_worker.js > temp && mv temp .open-next/assets/_worker.js"
   },
   "dependencies": {
     "fumadocs-core": "16.4.9",
