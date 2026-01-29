@@ -8,9 +8,13 @@
     "start": "next start",
     "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
     "postinstall": "fumadocs-mdx",
-    "pages:build": "npx @opennextjs/cloudflare build && cp -r .open-next/cloudflare .open-next/middleware .open-next/.build .open-next/server-functions .open-next/assets/ && cp .open-next/worker.js .open-next/assets/_worker.js && mkdir -p .open-next/assets/_next && cp -r .next/static .open-next/assets/_next/ && cp .open-next/_routes.json .open-next/assets/ 2>/dev/null || : && echo 'globalThis.__name = (target, value) => Object.defineProperty(target, \"name\", { value, configurable: true });' | cat - .open-next/assets/_worker.js > temp && mv temp .open-next/assets/_worker.js"
+    "build:cf": "opennextjs-cloudflare build",
+    "preview:cf": "opennextjs-cloudflare preview",
+    "deploy:cf": "opennextjs-cloudflare deploy"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^16.1.6",
+    "@next/mdx": "^16.1.6",
     "fumadocs-core": "16.4.9",
     "fumadocs-mdx": "14.2.6",
     "fumadocs-ui": "16.4.9",
@@ -30,6 +34,6 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
-    "wrangler": "^4.61.0"
+    "wrangler": "^4.61.1"
   }
 }
