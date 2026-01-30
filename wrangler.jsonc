@@ -6,4 +6,7 @@
   "assets": {
     "directory": ".open-next/assets"
   },
+  "images": {
+    "binding": "IMAGES"
+  }
 }

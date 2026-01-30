@@ -13,9 +13,6 @@ const config = {
       },
     ];
   },
-    images: {
-    unoptimized: true,
-  },
 };
 
 export default withMDX(config);
